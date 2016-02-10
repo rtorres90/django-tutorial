@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
+from django.utils import timezone
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
@@ -20,4 +20,4 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 
     def __unicode__(self):
-        return "<%s[%s]>" % (self.choice_text, self.id)
+        return "%s[%s]" % (self.choice_text, self.id)
